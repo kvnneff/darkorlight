@@ -1,0 +1,14 @@
+{
+  "name": "darkorlight",
+  "description": "test a color to see if it is dark or light",
+  "scripts": ["index.js"],
+  "development": {
+      "dependencies": {
+        "component/assert": "0.5.0",
+        "component/stack": "0.0.1",
+        "jkroso/equals": "1.0.0",
+        "jkroso/type": "1.1.0",
+        "yields/fmt": "0.0.2"
+      }
+    }
+}

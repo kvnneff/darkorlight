@@ -6,9 +6,7 @@
  * @api public
  */
 function hexToRGB(hex) {
-    console.log(hex);
     hex = hex.replace(/[^0-9A-F]/gi, '');
-    console.log(hex);
     var bigint = parseInt(hex, 16);
     var r = (bigint >> 16) & 255;
     var g = (bigint >> 8) & 255;

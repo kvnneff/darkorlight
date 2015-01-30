@@ -2,6 +2,8 @@
 
 A tiny utility that checks whether a color is dark or light, for node.js or the browser.  Useful for determining what text color to use over differently colored backgrounds.
 
+[DEMO](http://staygrimm.github.io/darkorlight/) (refresh the page)
+
 ##API
 
 ###darkorlight.dark(color)

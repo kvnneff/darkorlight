@@ -1,6 +1,6 @@
 {
   "name": "darkorlight",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "test whether a color is dark or light",
   "main": "index.js",
   "directories": {

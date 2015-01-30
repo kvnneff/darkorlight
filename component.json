@@ -1,7 +1,7 @@
 {
   "name": "darkorlight",
   "description": "test a color to see if it is dark or light",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": ["index.js"],
   "development": {
       "dependencies": {

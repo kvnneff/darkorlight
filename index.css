@@ -1,0 +1,13 @@
+@import "suitcss/components-grid";
+@import "suitcss/utils-size";
+
+body {
+    margin:0;
+    font-family: sans-serif;
+}
+
+.Grid-cell {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 2rem!important;
+}

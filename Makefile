@@ -2,25 +2,18 @@ BUILDDIR := ./build
 TESTDIR := ./test
 BIN := ./node_modules/.bin
 
-build-test: node_modules
+build: node_modules builddir
 	@$(BIN)/duo --stdout index.js > $(BUILDDIR)/build.js
-	@$(BIN)/duo --stdout $(TESTDIR)/index.js > $(BUILDDIR)/tests.js \
-		--development
+	@$(BIN)/duo --stdout index.css > $(BUILDDIR)/build.css
+	@$(BIN)/suitcss build/build.css build/build.css
 
-test: build build-test
-	@$(BIN)/duo-test \
-		-c 'make build && make build-test' \
-		--build build/tests.js \
-		--reporter spec \
-		browser
+builddir:
+	mkdir -p $(BUILDDIR)
 
 node_modules:
-	npm install
+	npm install duo suitcss-preprocessor
 
 clean:
 	rm -rf ./node_modules ./build ./components
 
-$(BUILDDIR):
-	mkdir -p $(BUILDDIR)
-
-phony: build build-test tests
+.PHONY: build clean

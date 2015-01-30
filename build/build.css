@@ -1,0 +1,325 @@
+/*@import "necolas/normalize.css";*/
+
+/** @define Grid; use strict */
+
+
+
+/**
+ * Core grid component
+ *
+ * DO NOT apply dimension or offset utilities to the `Grid` element. All cell
+ * widths and offsets should be applied to child grid cells.
+ */
+
+/* Grid container
+   ========================================================================== */
+
+/**
+ * All content must be contained within child `Grid-cell` elements.
+ *
+ * 1. Account for browser defaults of elements that might be the root node of
+ *    the component.
+ * 2. Remove inter-cell whitespace that appears between `inline-block` child
+ *    elements.
+ * 3. Ensure consistent default alignment.
+ */
+
+.Grid {
+  display: block;
+  /* 1 */
+  font-size: 0;
+  /* 2 */
+  margin: 0;
+  /* 1 */
+  padding: 0;
+  /* 1 */
+  text-align: left;
+  /* 3 */
+}
+
+/**
+ * Modifier: center align all grid cells
+ */
+
+.Grid--alignCenter {
+  text-align: center;
+}
+
+/**
+ * Modifier: right align all grid cells
+ */
+
+.Grid--alignRight {
+  text-align: right;
+}
+
+/**
+ * Modifier: middle-align grid cells
+ */
+
+.Grid--alignMiddle > .Grid-cell {
+  vertical-align: middle;
+}
+
+/**
+ * Modifier: bottom-align grid cells
+ */
+
+.Grid--alignBottom > .Grid-cell {
+  vertical-align: bottom;
+}
+
+/**
+ * Modifier: gutters
+ *
+ * NOTE: this can trigger a horizontal scrollbar if the component is as wide as
+ * the viewport. Use padding on a container, or `overflow-x:hidden` to protect
+ * against it.
+ */
+
+.Grid--withGutter {
+  margin: 0 -10px;
+}
+
+.Grid--withGutter > .Grid-cell {
+  padding: 0 10px;
+}
+
+/* Grid cell
+   ========================================================================== */
+
+/**
+ * No explicit width by default. Rely on combining `Grid-cell` with a dimension
+ * utility or a component class that extends 'grid'.
+ *
+ * 1. Fundamentals of the non-float grid layout.
+ * 2. Reset font size change made in `Grid`.
+ * 3. Keeps content correctly aligned with the grid direction.
+ * 4. Controls vertical positioning of units.
+ * 5. Make cells full-width by default.
+ */
+
+.Grid-cell {
+  box-sizing: border-box;
+  display: inline-block;
+  /* 1 */
+  font-size: 1rem;
+  /* 2 */
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  /* 3 */
+  vertical-align: top;
+  /* 4 */
+  width: 100%;
+  /* 5 */
+}
+
+/**
+ * Modifier: horizontally center one unit
+ * Set a specific unit to be horizontally centered. Doesn't affect
+ * any other units. Can still contain a child `Grid` object.
+ */
+
+.Grid-cell--center {
+  display: block;
+  margin: 0 auto;
+}
+
+/**
+ * Sizing utilities
+ */
+
+/* Intrinsic widths
+   ========================================================================== */
+
+/**
+ * Make an element shrink wrap its content.
+ */
+
+.u-sizeFit,
+.u-sizeFitAlt {
+  display: block !important;
+  float: left !important;
+  width: auto !important;
+}
+
+.u-sizeFitAlt {
+  float: right !important;
+}
+
+/**
+ * Make an element fill the remaining space.
+ * N.B. This will hide overflow.
+ */
+
+.u-sizeFill {
+  display: block !important;
+  overflow: hidden !important;
+  width: auto !important;
+}
+
+/**
+ * An alternative method to make an element fill the remaining space.
+ * N.B. Do not use if child elements might be wider than the remaining space.
+ * In Chrome, Safari, and Firefox it results in undesired layout.
+ */
+
+.u-sizeFillAlt {
+  display: table-cell !important;
+  max-width: 100% !important;
+  width: 10000px !important;
+}
+
+/**
+ * Make an element the width of its parent.
+ */
+
+.u-sizeFull {
+  box-sizing: border-box !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+/* Proportional widths
+   ========================================================================== */
+
+/**
+ * Specify the proportional width of an object.
+ * Intentional redundancy build into each set of unit classes.
+ * Supports: 2, 3, 4, 5, 6, 8, 10, 12 part
+ */
+
+.u-size1of12 {
+  width: 8.333333333333332% !important;
+}
+
+.u-size1of10 {
+  width: 10% !important;
+}
+
+.u-size1of8 {
+  width: 12.5% !important;
+}
+
+.u-size1of6,
+.u-size2of12 {
+  width: 16.666666666666664% !important;
+}
+
+.u-size1of5,
+.u-size2of10 {
+  width: 20% !important;
+}
+
+.u-size1of4,
+.u-size2of8,
+.u-size3of12 {
+  width: 25% !important;
+}
+
+.u-size3of10 {
+  width: 30% !important;
+}
+
+.u-size1of3,
+.u-size2of6,
+.u-size4of12 {
+  width: 33.33333333333333% !important;
+}
+
+.u-size3of8 {
+  width: 37.5% !important;
+}
+
+.u-size2of5,
+.u-size4of10 {
+  width: 40% !important;
+}
+
+.u-size5of12 {
+  width: 41.66666666666667% !important;
+}
+
+.u-size1of2,
+.u-size2of4,
+.u-size3of6,
+.u-size4of8,
+.u-size5of10,
+.u-size6of12 {
+  width: 50% !important;
+}
+
+.u-size7of12 {
+  width: 58.333333333333336% !important;
+}
+
+.u-size3of5,
+.u-size6of10 {
+  width: 60% !important;
+}
+
+.u-size5of8 {
+  width: 62.5% !important;
+}
+
+.u-size2of3,
+.u-size4of6,
+.u-size8of12 {
+  width: 66.66666666666666% !important;
+}
+
+.u-size7of10 {
+  width: 70% !important;
+}
+
+.u-size3of4,
+.u-size6of8,
+.u-size9of12 {
+  width: 75% !important;
+}
+
+.u-size4of5,
+.u-size8of10 {
+  width: 80% !important;
+}
+
+.u-size5of6,
+.u-size10of12 {
+  width: 83.33333333333334% !important;
+}
+
+.u-size7of8 {
+  width: 87.5% !important;
+}
+
+.u-size9of10 {
+  width: 90% !important;
+}
+
+.u-size11of12 {
+  width: 91.66666666666666% !important;
+}
+
+/**
+ * Size: breakpoint 1 (small)
+ */
+
+/**
+ * Size: breakpoint 2 (medium)
+ */
+
+/**
+ * Size: breakpoint 3 (large)
+ */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.Grid-cell {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 2rem!important;
+}

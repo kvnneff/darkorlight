@@ -2,7 +2,7 @@
 
 A tiny utility that checks whether a color is dark or light, for node.js or the browser.  Useful for determining what text color to use over differently colored backgrounds.
 
-[DEMO](http://staygrimm.github.io/darkorlight/) (refresh the page)
+[DEMO](http://kvnneff.github.io/darkorlight/) (refresh the page)
 
 ## API
 
@@ -19,7 +19,7 @@ Accepts either a hex string or an array of rgb values.  Returns `true` if the co
 	darkorlight.dark(color1); // returns `false`
 	darkorlight.dark(color2); // returns `true`
 	darkorlight.dark(color3); // returns `false`
-	
+
 ### darkorlight.light(color)
 
 Accepts either a hex string or an array of rgb values.  Returns `true` if the color is light, or `false` if considered dark.
@@ -41,7 +41,7 @@ Accepts either a hex string or an array of rgb values.  Returns `true` if the co
 ## LICENSE
 The MIT License (MIT)
 
-Copyright (c) 2015 River Grimm river.grimm@gmail.com
+Copyright (c) 2015 Kevin Neff kvnneff@gmail.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
